@@ -1,1 +1,88 @@
-theme: jekyll-theme-minimal
+# ------------------------------
+# 基础配置（必填）
+# ------------------------------
+title: 张稣佑的技术博客
+description: "机器学习 | 图像生成 | 技术探索"
+url: "https://zhangsuyou.github.io"
+baseurl: ""
+
+# 作者信息
+author:
+  name: 张稣佑
+  email: suyou_zhang0202@163.com
+  bio: "机器学习爱好者，专注GAN与金融风控模型"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/zhangsuyou"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/zhangsuyou"
+
+# ------------------------------
+# 插件与扩展（按需启用）
+# ------------------------------
+plugins:
+  - jekyll-seo-tag       # SEO优化
+  - jekyll-sitemap      # 生成站点地图
+  - jekyll-minifier     # 压缩代码（需安装）
+  - jekyll-lunr-js-search # 搜索功能
+
+# ------------------------------
+# SEO优化
+# ------------------------------
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/images/og-image.jpg"  # 需提前上传图片
+
+# Google Analytics（替换为你的ID）
+google_analytics: "UA-XXXXX-Y"
+
+# ------------------------------
+# 性能优化
+# ------------------------------
+preload:
+  - href: "/assets/css/main.css"
+    as: "style"
+  - href: "/assets/js/main.js"
+    as: "script"
+
+# ------------------------------
+# 功能扩展
+# ------------------------------
+# 评论系统（Utterances）
+comments:
+  enabled: true
+  provider: utterances
+  utterances:
+    repo: zhangsuyou/zhangsuyou.github.io  # 改为你的仓库名
+    issue-term: pathname
+    theme: github-light
+
+# 文章分类与分页
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:title/
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# 搜索功能
+search:
+  placeholder: "搜索文章..."
+
+# ------------------------------
+# 安全与合规
+# ------------------------------
+whitelist:  # GitHub Pages允许的插件
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+cookie_consent:
+  enabled: true
+  message: "本网站使用Cookie以优化体验。"
+  dismiss: "同意"
+  learn_more: "隐私政策"
+  link: "/privacy"
